@@ -7,7 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.demo.coronatracker.model.AllCountriesCasesResponse;
 import com.demo.coronatracker.model.TotalCoronaCasesResponse;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 public class CoronaTrackerService {
@@ -22,12 +21,14 @@ public class CoronaTrackerService {
 		this.restTemplate = restTemplate;
 	}
 
-	@HystrixCommand(fallbackMethod = "getAllFallBack")
+	//@HystrixCommand(fallbackMethod = "getAllFallBack")
+	
+	//@PostConstruct
+	//@Scheduled(cron="* * * * * *")
 	public TotalCoronaCasesResponse getAll() {
 
 		try {
 			return clientApi.getAll(restTemplate);
-			// return null;
 		} catch (Exception ex) {
 			logger.info("exception");
 		}
@@ -38,7 +39,6 @@ public class CoronaTrackerService {
 
 		try {
 			return clientApi.getAllCountriesData(restTemplate);
-			// return null;
 		} catch (Exception ex) {
 			logger.info("exception");
 		}
