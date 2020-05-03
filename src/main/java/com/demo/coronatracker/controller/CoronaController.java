@@ -13,23 +13,23 @@ import com.demo.coronatracker.model.TotalCoronaCasesResponse;
 import com.demo.coronatracker.service.CoronaTrackerService;
 
 @Controller
-public class CoronaController implements ErrorController{
+public class CoronaController implements ErrorController {
 
 	@Autowired
 	private CoronaTrackerService coronaTrackerService;
-	
-	@GetMapping(path="/")
-	public ModelAndView getAll(ModelAndView modelAndView) {    
-        
-        TotalCoronaCasesResponse totalStats = coronaTrackerService.getAll();
-        modelAndView.addObject("totalStats", totalStats);    
-       
-        AllCountriesCasesResponse[] countriesStats = coronaTrackerService.getAllCountriesData();
-        modelAndView.addObject("countriesStats", countriesStats); 
-        
-        modelAndView.setViewName("index");        
-        
-        return modelAndView;    
+
+	@GetMapping(path = "/")
+	public ModelAndView getAll(ModelAndView modelAndView) {
+
+		TotalCoronaCasesResponse totalStats = coronaTrackerService.getAll();
+		modelAndView.addObject("totalStats", totalStats);
+
+		AllCountriesCasesResponse[] countriesStats = coronaTrackerService.getAllCountriesData();
+		modelAndView.addObject("countriesStats", countriesStats);
+
+		modelAndView.setViewName("index");
+
+		return modelAndView;
 	}
 
 	@Override

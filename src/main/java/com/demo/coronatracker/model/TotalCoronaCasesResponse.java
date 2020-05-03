@@ -4,17 +4,9 @@ public class TotalCoronaCasesResponse {
 
 	private String updated;
 	private String cases;
-	private String todayCases;
 	private String deaths;
-	private String todayDeaths;
 	private String recovered;
 	private String active;
-	private String critical;
-	private String casesPerOneMillion;
-	private String deathsPerOneMillion;
-	private String tests;
-	private String testsPerOneMillion;
-	private String affectedCountries;
 
 	public String getUpdated() {
 		return updated;
@@ -32,28 +24,12 @@ public class TotalCoronaCasesResponse {
 		this.cases = cases;
 	}
 
-	public String getTodayCases() {
-		return todayCases;
-	}
-
-	public void setTodayCases(String todayCases) {
-		this.todayCases = todayCases;
-	}
-
 	public String getDeaths() {
 		return deaths;
 	}
 
 	public void setDeaths(String deaths) {
 		this.deaths = deaths;
-	}
-
-	public String getTodayDeaths() {
-		return todayDeaths;
-	}
-
-	public void setTodayDeaths(String todayDeaths) {
-		this.todayDeaths = todayDeaths;
 	}
 
 	public String getRecovered() {
@@ -71,62 +47,4 @@ public class TotalCoronaCasesResponse {
 	public void setActive(String active) {
 		this.active = active;
 	}
-
-	public String getCritical() {
-		return critical;
-	}
-
-	public void setCritical(String critical) {
-		this.critical = critical;
-	}
-
-	public String getCasesPerOneMillion() {
-		return casesPerOneMillion;
-	}
-
-	public void setCasesPerOneMillion(String casesPerOneMillion) {
-		this.casesPerOneMillion = casesPerOneMillion;
-	}
-
-	public String getDeathsPerOneMillion() {
-		return deathsPerOneMillion;
-	}
-
-	public void setDeathsPerOneMillion(String deathsPerOneMillion) {
-		this.deathsPerOneMillion = deathsPerOneMillion;
-	}
-
-	public String getTests() {
-		return tests;
-	}
-
-	public void setTests(String tests) {
-		this.tests = tests;
-	}
-
-	public String getTestsPerOneMillion() {
-		return testsPerOneMillion;
-	}
-
-	public void setTestsPerOneMillion(String testsPerOneMillion) {
-		this.testsPerOneMillion = testsPerOneMillion;
-	}
-
-	public String getAffectedCountries() {
-		return affectedCountries;
-	}
-
-	public void setAffectedCountries(String affectedCountries) {
-		this.affectedCountries = affectedCountries;
-	}
-
-	@Override
-	public String toString() {
-		return "TotalCoronaCases [updated=" + updated + ", cases=" + cases + ", todayCases=" + todayCases + ", deaths="
-				+ deaths + ", todayDeaths=" + todayDeaths + ", recovered=" + recovered + ", active=" + active
-				+ ", critical=" + critical + ", casesPerOneMillion=" + casesPerOneMillion + ", deathsPerOneMillion="
-				+ deathsPerOneMillion + ", tests=" + tests + ", testsPerOneMillion=" + testsPerOneMillion
-				+ ", affectedCountries=" + affectedCountries + "]";
-	}
-
 }

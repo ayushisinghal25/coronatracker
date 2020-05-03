@@ -35,7 +35,6 @@ public class ClientApi {
 		TotalCoronaCasesResponse response = restTemplate
 				.exchange(CoronaInfoEndpoints.GET_ALL_DATA, HttpMethod.GET, entity, TotalCoronaCasesResponse.class)
 				.getBody();
-		logger.info("TotalCoronaCasesResponse := {}", response);
 
 		response.setUpdated(DataTimeFormatUtils.getDataTimeFormat(response.getUpdated()));
 		return response;
@@ -50,7 +49,6 @@ public class ClientApi {
 
 		AllCountriesCasesResponse[] response = restTemplate
 				.exchange(builder.toUriString(), HttpMethod.GET, entity, AllCountriesCasesResponse[].class).getBody();
-		logger.info("Get all Countries cases := {}", response);
 
 		formatDate(response);
 		return response;

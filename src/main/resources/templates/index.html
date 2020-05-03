@@ -5,268 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="js/script.js"></script>
 
 <title>WorldWide Corona Cases</title>
 
-			<script type="text/javascript">
-function darkMode(x) {
-	var element1 = document.body;
-	element1.classList.toggle("dark-mode");
-	x.classList.toggle("fa-moon-o");
-	
-	var element2 = document.getElementById("kbd");
-	if (element2.innerText == "Dark Mode ON") {
-		element2.innerText = "Dark Mode OFF";
-	  } else {
-		  element2.innerHTML = "<bold>Dark Mode ON</bold>";
-	  }
-	
-	var element3 = document.getElementById("countriesStats");
-	element3.classList.remove("table-striped");
-	element3.classList.remove("table-hover");
-}
-
-function applyColors(){
-	var table = document.getElementById( 'countriesStats' );
-	rows = table.getElementsByTagName( 'tr' );
-
-	for( var i=rows.length; i--; ) {
-		if (rows[i].cells[2].innerText > 0) {
-			var x = rows[i].cells[2].innerText;
-			rows[i].cells[2].innerHTML = "<mark class='casesToday'>"+x+"</mark>";
-		}
-		if (rows[i].cells[4].innerText > 0) {
-			var x = rows[i].cells[4].innerText;
-			rows[i].cells[4].innerHTML = "<mark class='deathsToday'>"+x+"</mark>";
-		}
-		if (rows[i].cells[0].innerText == 'India') {
-			rows[i].style.backgroundColor = "#a6a6a6";
-			rows[i].style.fontWeight = "bold";
-			
-		}
-	}
-}
-
-$(document).ready(function(){
-	
-	$("#countryInput").on("keyup", function() {
-	    var value = $(this).val().toLowerCase();
-	    $(".countriesTable tr").filter(function() {
-	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	    });
-	  });
-});
-</script>
-			<style>
-				#main-container{
-					width:960px;
-					margin:5px auto;
-				}
-				#header-tab{
-				}
-				#left-col{
-					width:200px;
-					float:left;
-				}
-				#title-col{
-					width:800px;
-					float:right;
-					text-align:center;
-					margin-top:15px;
-					text-transform:uppercase;
-					font-family: Calibri;
-				}
-				#right-col{
-					width:460px;
-					float:left;
-					text-align:center;
-				}
-				#countriesStats{
-					width:900px;
-					
-				}
-				#countriesStats th{
-					background-color: #404040;
-					color: white;
-					width: 60px;
-					overflow-wrap: break-word;
-				}
-#countriesStats td, #countriesStats th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 5px;
-}
-#countryName{
-font-weight: bold;
-}
-				#countryInput{
-				width:900px;
-				
-	margin-top:20px;
-	margin-bottom:20px;
-	font-size:10px;
-	height:25px;
-}
-				#data-table{
-					margin-top:15px;
-					font-size:10px;
-					overflow-x:auto;
-					overflow-y:auto;
-				}
-				#quote{
-					float:left;
-					height:25px;
-					width:342px;
-					font-size:10px;
-					text-align:center;
-				}
-				.flex-container {
-	display: flex;
-  	justify-content: center;
-  	font-family:"Calibri";
-  	flex-wrap:wrap;
-}
-.flex-container>span {
-	margin: 5px;
-	padding: 10px;
-	font-size: 25px;
-	border-radius:5px;
-	width:120px;
-	height:100px;
-}
-
-.data-container {
-float:left;
-	display: flex;
-  	justify-content: center;
-  	font-family:"Calibri";
-  	flex-wrap:wrap;
-}
-.data-container>span {
-	 margin: 5px;
-	padding: 5px;
-	font-size: 25px;
-	border-radius:5px;
-	width:90px;
-	height:82px;
-}
-
-
-.total{
-background-color: #ffe6e6;
-}
-.total .boxvalue{
-color: #ff0000;
-}
-.boxname{
-font-size:15px;
-height:30px;
-}
-.boxvalue{
-font-size:18px;
-}
-.total .boxname{
-color: #ff6666;
-font-weight:"bold";
-}
-.active{
-background-color: #e6e6ff;
-}
-.active .boxvalue{
-color: #0000ff;
-}
-.active .boxname{
-color: #6666ff;
-
-}
-.recover{
-background-color: #e6ffe6;
-}
-.recover .boxvalue{
-color: #00b300;
-}
-.recover .boxname{
-color:  #00e600;
-
-}
-.dead{
-background-color: #f2f2f2;
-}
-.dead .boxvalue{
-color: #737373;
-}
-.dead .boxname{
-color: #a6a6a6;
-
-}
-.fa {
-  font-size: 30px;
-  cursor: pointer;
-  user-select: none;
-}
-.dark-mode {
-  	background-color: #222;
-    color: #ffffff;
-    border-color: #e6e6e6;    
-}
-.casesToday{
-	background-color:#ffff66;
-}
-.deathsToday{
-	background-color:#ff6666;
-}
-#total-tab{
-						width:800px;
-					}
-				
-				@media screen and (max-width:600px){
-					#main-container{
-						width:100%;
-					}
-					#header-tab{
-						width:100%;
-					}
-					#left-col{
-						width:50%;
-					}
-					kbd{
-						font-size:10px;
-					}
-					#title-col{
-						width:100%;
-						font-size:18px;
-					}
-					#right-col{
-						width:50%;
-						font-size:10px;
-						
-					}
-					#quote{
-						width:100%;
-					}
-					#total-tab{
-						width:100%;
-					}
-					#data-table{
-						width:95%;
-					}
-					#countriesStats{
-						width:95%;
-					}
-					#countryInput{
-						width:100%;
-				}
-			</style>
 		</head>
 		<body onload="applyColors()">
 			<div class="flex-container" id="main-container">
 				<div id="header-tab">
 					<div id="left-col">
 						<i onclick="darkMode(this)" class="fa fa-sun-o"></i>
-						<kbd id="kbd">Dark Mode OFF</kbd>
+						</br>
+						<kbd id="kbd">Click icon for Dark Mode</kbd>
 					</div>
 					<div id="right-col">
 						<mark>Last updated at: 
@@ -303,11 +57,11 @@ color: #a6a6a6;
 	
 		<input class="form-control" id="countryInput" type="text" placeholder="Search your Country..">
 		
-		<div class="table-responsive">
+		<div>
 		<table id="countriesStats" class="table table-hover table-striped">
 		<thead>
 			<tr class="text-left">
-				<th>Countries</th>
+				<th colspan="2">Country</th>
 				<th>Total Cases</th>
 				<th>Cases Today</th>
 				<th>Total Deaths</th>
@@ -318,7 +72,8 @@ color: #a6a6a6;
 		</thead>
 		<tbody class="countriesTable">
 			<tr th:each="countriesStat: ${countriesStats}">
-				<td id="countryName" th:text="${countriesStat.country}">0</td>
+				<td id="countryImage"><img th:src="@{${countriesStat.countryInfo.flag}}"/></td>
+				<td id="countryName" th:text="${countriesStat.country}"></td>
 				<td th:text="${countriesStat.cases}">0</td>
 				<td th:text="${countriesStat.todayCases}">0</td>
 				<td th:text="${countriesStat.deaths}">0</td>

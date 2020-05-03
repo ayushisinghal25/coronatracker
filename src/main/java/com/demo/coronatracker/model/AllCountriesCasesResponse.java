@@ -11,60 +11,9 @@ public class AllCountriesCasesResponse {
 	private String todayDeaths;
 	private String recovered;
 	private String active;
-	private String critical;
-	private String casesPerOneMillion;
-	private String deathsPerOneMillion;
-	private String tests;
-	private String testsPerOneMillion;
-	private String continent;
 
 	private static class CountryInfo {
-		private String _id;
-		private String iso2;
-		private String iso3;
-		private String lat;
-		private String longt;
 		private String flag;
-
-		public String getId() {
-			return _id;
-		}
-
-		public void setId(String id) {
-			this._id = id;
-		}
-
-		public String getIso2() {
-			return iso2;
-		}
-
-		public void setIso2(String iso2) {
-			this.iso2 = iso2;
-		}
-
-		public String getIso3() {
-			return iso3;
-		}
-
-		public void setIso3(String iso3) {
-			this.iso3 = iso3;
-		}
-
-		public String getLat() {
-			return lat;
-		}
-
-		public void setLat(String lat) {
-			this.lat = lat;
-		}
-
-		public String getLongt() {
-			return longt;
-		}
-
-		public void setLongt(String longt) {
-			this.longt = longt;
-		}
 
 		public String getFlag() {
 			return flag;
@@ -72,12 +21,6 @@ public class AllCountriesCasesResponse {
 
 		public void setFlag(String flag) {
 			this.flag = flag;
-		}
-
-		@Override
-		public String toString() {
-			return "CountryInfo [id=" + _id + ", iso2=" + iso2 + ", iso3=" + iso3 + ", lat=" + lat + ", longt=" + longt
-					+ ", flag=" + flag + "]";
 		}
 	}
 
@@ -151,62 +94,5 @@ public class AllCountriesCasesResponse {
 
 	public void setActive(String active) {
 		this.active = active;
-	}
-
-	public String getCritical() {
-		return critical;
-	}
-
-	public void setCritical(String critical) {
-		this.critical = critical;
-	}
-
-	public String getCasesPerOneMillion() {
-		return casesPerOneMillion;
-	}
-
-	public void setCasesPerOneMillion(String casesPerOneMillion) {
-		this.casesPerOneMillion = casesPerOneMillion;
-	}
-
-	public String getDeathsPerOneMillion() {
-		return deathsPerOneMillion;
-	}
-
-	public void setDeathsPerOneMillion(String deathsPerOneMillion) {
-		this.deathsPerOneMillion = deathsPerOneMillion;
-	}
-
-	public String getTests() {
-		return tests;
-	}
-
-	public void setTests(String tests) {
-		this.tests = tests;
-	}
-
-	public String getTestsPerOneMillion() {
-		return testsPerOneMillion;
-	}
-
-	public void setTestsPerOneMillion(String testsPerOneMillion) {
-		this.testsPerOneMillion = testsPerOneMillion;
-	}
-
-	public String getContinent() {
-		return continent;
-	}
-
-	public void setContinent(String continent) {
-		this.continent = continent;
-	}
-
-	@Override
-	public String toString() {
-		return "AllCountriesCases [updated=" + updated + ", country=" + country + ", countryInfo=" + countryInfo
-				+ ", cases=" + cases + ", todayCases=" + todayCases + ", deaths=" + deaths + ", todayDeaths="
-				+ todayDeaths + ", recovered=" + recovered + ", active=" + active + ", critical=" + critical
-				+ ", casesPerOneMillion=" + casesPerOneMillion + ", deathsPerOneMillion=" + deathsPerOneMillion
-				+ ", tests=" + tests + ", testsPerOneMillion=" + testsPerOneMillion + ", continent=" + continent + "]";
 	}
 }

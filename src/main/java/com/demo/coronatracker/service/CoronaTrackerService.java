@@ -21,10 +21,8 @@ public class CoronaTrackerService {
 		this.restTemplate = restTemplate;
 	}
 
-	//@HystrixCommand(fallbackMethod = "getAllFallBack")
-	
-	//@PostConstruct
-	//@Scheduled(cron="* * * * * *")
+	// @PostConstruct
+	// @Scheduled(cron="* * * * * *")
 	public TotalCoronaCasesResponse getAll() {
 
 		try {
@@ -42,11 +40,6 @@ public class CoronaTrackerService {
 		} catch (Exception ex) {
 			logger.info("exception");
 		}
-		return null;
-	}
-
-	public TotalCoronaCasesResponse getAllFallBack(Throwable th) throws Exception {
-		// throw new Exception(th.getMessage());
 		return null;
 	}
 }
