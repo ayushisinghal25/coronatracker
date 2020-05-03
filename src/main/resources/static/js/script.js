@@ -20,15 +20,15 @@ function applyColors(){
 	rows = table.getElementsByTagName( 'tr' );
 
 	for( var i=rows.length; i--; ) {
-		if (rows[i].cells[2].innerText > 0) {
-			var x = rows[i].cells[2].innerText;
-			rows[i].cells[2].innerHTML = "<mark class='casesToday'>"+x+"</mark>";
+		if (rows[i].cells[3].innerText > 0) {
+			var x = rows[i].cells[3].innerText;
+			rows[i].cells[3].innerHTML = "<mark class='casesToday'>"+x+"</mark>";
 		}
-		if (rows[i].cells[4].innerText > 0) {
-			var x = rows[i].cells[4].innerText;
-			rows[i].cells[4].innerHTML = "<mark class='deathsToday'>"+x+"</mark>";
+		if (rows[i].cells[5].innerText > 0) {
+			var x = rows[i].cells[5].innerText;
+			rows[i].cells[5].innerHTML = "<mark class='deathsToday'>"+x+"</mark>";
 		}
-		if (rows[i].cells[0].innerText == 'India') {
+		if (rows[i].cells[1].innerText == 'India') {
 			rows[i].style.backgroundColor = "#a6a6a6";
 			rows[i].style.fontWeight = "bold";
 			
